@@ -1,43 +1,54 @@
-# URL-Shortner
-Anonymous URL Shortener
-Anonymous URL shortener built with Next.js + TypeScript + Prisma + Postgres.
+# URL Shortner
 
-Features
-Shorten any HTTP/HTTPS URL.
-Random slug by default (5 chars).
-Optional custom slug (a-z, 0-9, -, length 4-32).
-Public redirect endpoint (/{slug}).
-Public stats endpoint and stats page.
-Optional expiry date per link.
-Basic IP-based rate limiting for link creation.
-Quick Start
-Install dependencies:
+A fast anonymous URL shortener built with **Next.js + TypeScript + Prisma + PostgreSQL (Neon)**.
+
+## Live Demo
+- App: https://u5go-1628.vercel.app
+
+## Features
+- Anonymous link shortening (no login)
+- Random short slug generation (5 chars)
+- Optional custom slug
+- Redirect by slug
+- Public stats endpoint/page
+- Optional expiry date
+- Basic rate limiting
+- Deployed on Vercel
+
+## Tech Stack
+- Next.js (App Router)
+- TypeScript
+- Prisma ORM
+- PostgreSQL (Neon)
+- Vercel
+
+## Project Structure
+- `url-shortener/` → main app folder
+
+## Run Locally
+
+```bash
+cd url-shortener
 npm install
-Configure environment variables:
-cp .env.example .env
-Fill DATABASE_URL with your managed Postgres connection string.
+Create .env:
+DATABASE_URL="your_neon_postgres_url"
+SHORT_URL_BASE="http://localhost:3000"
+IP_HASH_SALT="your-random-secret"
 
-Create migration and generate Prisma client:
+Run migrations + start:
 
 npx prisma migrate dev --name init
-npx prisma generate
-Start the app:
 npm run dev
-API
+Open: http://localhost:3000
+
+API Routes
 POST /api/shorten
 GET /api/stats/:slug
 GET /api/health
 GET /:slug (redirect)
-POST /api/shorten body
-{
-  "originalUrl": "https://example.com/my/long/link",
-  "customSlug": "optional-slug",
-  "expiresAt": "2026-12-01T10:00:00.000Z"
-}
-Vercel Deployment
-Deploy the project on Vercel.
-Provision a managed Postgres database (Neon / Prisma Postgres / Supabase via Vercel Marketplace).
-Add these environment variables in Vercel:
+Deploy
+Set these env vars in Vercel:
+
 DATABASE_URL
-SHORT_URL_BASE (your production domain, e.g. https://sho.rt)
+SHORT_URL_BASE
 IP_HASH_SALT
