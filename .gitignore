@@ -1,0 +1,9 @@
+url-shortener/node_modules/
+url-shortener/.next/
+url-shortener/.next-build/
+url-shortener/.next-build-2/
+url-shortener/.env
+url-shortener/.env.local
+url-shortener/.env.development.local
+url-shortener/.env.test.local
+url-shortener/.env.production.local
