@@ -1,3 +1,5 @@
+<img width="1920" height="1080" alt="Screenshot 2026-04-05 132642" src="https://github.com/user-attachments/assets/f2ee49dd-56d8-4781-a32b-35f484da6927" />
+<img width="1920" height="1080" alt="Screenshot 2026-04-05 132525" src="https://github.com/user-attachments/assets/bcd395d1-1bf4-4b0f-98e4-4dba8b6c8b1b" />
 # URL Shortner
 
 A fast anonymous URL shortener built with **Next.js + TypeScript + Prisma + PostgreSQL (Neon)**.
